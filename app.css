@@ -1,0 +1,128 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+body {
+    background-color: #282421;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(243, 236, 236);
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Patrick Hand SC', cursive;
+    letter-spacing: .4rem;
+    font-size: 6vmin;
+    margin: 1rem;
+}
+
+h2 {
+    font-family: 'Patrick Hand SC', cursive;
+    margin-top: 2rem;
+    margin-bottom: .2rem;
+    letter-spacing: .2rem;
+    font-size: 3vmin;
+}
+
+h3 {
+    font-family: 'Patrick Hand', cursive;
+    margin: .3rem;
+    letter-spacing: .2rem;
+    font-size: 1.5vmin;
+    color: rgb(190, 190, 190);
+}
+
+p {
+    font-weight: 300;
+}
+
+#titleInfo {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: block;
+  }
+
+#tvimg {
+    height: 15vmin;
+    box-shadow: 0px 0px 9px 4px #ffffff;
+}
+
+#castSearchForm {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+input[type=text] {
+    padding: 10px;
+    border-radius: 5px;
+    width: 12rem;
+}
+
+.flexbox-container {
+    background-color: #282421;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    column-gap: 1rem;
+}
+
+.charDiv {
+    background-color: #282421;
+    display: inline-block;
+    margin: 1rem;
+    padding: .2rem;
+    padding-top: .35rem;
+    border: .2rem solid #383838;
+    text-align: center;
+    max-width: 229px;
+    flex-grow: 1;
+    color: black;
+    box-shadow: 0px 0px 4px 4px #ffffff;
+}
+.charImg {
+    border: 1px solid rgb(206, 206, 206);
+}
+
+.castButton {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+    width: 150px;
+    height: 35px;
+    font-size: larger;
+    border-radius: .3rem;
+    border-style: solid;
+    color: #dfdfdf;
+    border-color:#dfdfdf;
+    background-color:#707478;
+    cursor:pointer;
+   }
+
+.playsName {
+    color: rgb(209, 209, 209);
+}
+
+.castButton:hover {
+    color: #ffffff;
+    border-color:#ffffff;
+    background-color:#55585c;
+    
+
+}
+
+.castButton:active {
+    transform: translatey(1px);
+    background-color:#393b3f;
+}
+
+a {
+    color: #55b4eb;
+    text-decoration: none;
+}
