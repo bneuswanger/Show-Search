@@ -54,14 +54,14 @@ const ageCalc = (member) => {
     createHtmlElements(member, age);
 };
 
-const createHtmlElements = (blah, age) => {
+const createHtmlElements = (member, age) => {
     const charDiv = document.createElement("div");
     charDiv.className = "charDiv";
     charTilesSection.appendChild(charDiv);
 
     const img = document.createElement("img");
     img.className = "charImg";
-    img.src = blah.character.image.medium;
+    img.src = member.character.image.medium;
     charDiv.appendChild(img);
 
     const lineBreak = document.createElement("br");
@@ -70,9 +70,9 @@ const createHtmlElements = (blah, age) => {
     const actorName = document.createElement("a");
     actorName.classList = "actorName";
     actorName.target = "_blank";
-    let linkTextActor = document.createTextNode(`${blah.person.name} (${age})`);
+    let linkTextActor = document.createTextNode(`${member.person.name} (${age})`);
     actorName.appendChild(linkTextActor);
-    actorName.href = blah.person.url;
+    actorName.href = member.person.url;
     charDiv.appendChild(actorName);
 
     const playsName = document.createElement("span");
@@ -83,9 +83,9 @@ const createHtmlElements = (blah, age) => {
     const charName = document.createElement("a");
     charName.classList = "charName";
     charName.target = "_blank";
-    let linkTextChar = document.createTextNode(`${blah.character.name}`);
+    let linkTextChar = document.createTextNode(`${member.character.name}`);
     charName.appendChild(linkTextChar);
-    charName.href = blah.character.url;
+    charName.href = member.character.url;
     charDiv.appendChild(charName);
 }
 
