@@ -1,2 +1,2 @@
 # Show-Search
-Search a television show to get the streaming services it airs on
+Search a television show to get information about the cast.
