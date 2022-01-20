@@ -1,14 +1,13 @@
-const castSearchForm = document.querySelector("#castSearchForm");
+const showSearchForm = document.querySelector("#showSearchForm");
 const charTilesSection = document.querySelector("#charTilesSection");
 const clearImagesButton = document.querySelector("#clearImagesButton")
 
 
 
-clearImagesButton.addEventListener("click", function(e) {
+clearImagesButton.addEventListener("click", function (e) {
     e.preventDefault;
     console.log('button clicked');
     removeAllChildNodes(charTilesSection);
-  
 })
 
 const removeAllChildNodes = (parent) => {
@@ -17,18 +16,33 @@ const removeAllChildNodes = (parent) => {
     }
 }
 
-
-castSearchForm.addEventListener("submit", async function (e) {
+showSearchForm.addEventListener("submit", async function (e) {
     e.preventDefault();
-    const castSearchTerm = castSearchForm.elements.query.value;
+    const showSearchTerm = showSearchForm.elements.query.value;
     const res = await axios.get(
-        `https://api.tvmaze.com/search/shows?q=${castSearchTerm}`
+        `https://api.tvmaze.com/search/shows?q=${showSearchTerm}`
     );
     const showID = res.data[0].show.id;
     const res2 = await axios.get(`https://api.tvmaze.com/shows/${showID}/cast`);
     makeCharDivs(res2.data);
-    castSearchForm.elements.query.value = "";
+    showSearchForm.elements.query.value = "";
 });
+
+
+
+// showSearchForm.addEventListener("submit", async function (e) {
+//     e.preventDefault();
+//     const showSearchTerm = showSearchForm.elements.query.value;
+//     const res = await axios.get(
+//         `https://api.tvmaze.com/search/shows?q=${showSearchTerm}`
+//     );
+//     const showID = res.data[0].show.id;
+//     const res2 = await axios.get(`https://api.tvmaze.com/shows/${showID}/cast`);
+//     makeCharDivs(res2.data);
+//     showSearchForm.elements.query.value = "";
+// });
+
+
 
 const makeCharDivs = (cast) => {
     for (let member of cast) {

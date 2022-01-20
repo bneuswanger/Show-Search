@@ -21,10 +21,10 @@
         <h1>TV Show Cast Search</h1>
         <img src="https://images.unsplash.com/photo-1509281373149-e957c6296406?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=856&q=80"
             id="tvimg" alt="television image">
-        <h2>Getting Started</h2>
-        <h3>Enter a show name. Be specific or you might get something whacky - typos not supported!</h3>
-        <h3>Click "View Cast"</h3>
-        <h2>F.Y.I.</h2>
+        <h2>To Find a Show</h2>
+        <h3>Enter a show into the search box and click Search.</h3>
+        <h2>To View the Cast</h2>
+        <h3>Click on the show you want.</h3>
         <h3>Click the actor/actress or character name to be taken to their respective <a href="http://www.tvmaze.com"
                 target="_blank">tvmaze.com</a> page(s).</h3>
         <h3>The current age of the actor/actress, if available, is displayed.</h3>
@@ -32,14 +32,15 @@
 
     <br>
 
-    <form id="castSearchForm">
-        <input type="text" placeholder="Enter Show Name" name="query">
-        <button class="castButton">View Cast</button>
+    <form id="showSearchForm">
+        <input type="text" placeholder="Enter a show name" name="query">
+        <button class="searchButton">Search</button>
     </form>
     <br>
     <div id="clearImagesDiv"><button id="clearImagesButton">Clear Images</button></div>
 
     <br>
+    <section id="showTilesSection" class="flexbox-container"></section>
     <section id="charTilesSection" class="flexbox-container"></section>
 </body>
 
