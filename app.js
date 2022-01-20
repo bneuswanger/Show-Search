@@ -1,5 +1,11 @@
 const castSearchForm = document.querySelector("#castSearchForm");
 const charTilesSection = document.querySelector("#charTilesSection");
+const clearDivs = document.querySelector(".clearDivs")
+
+clearDivs.addEventListener("click", function(e) {
+    e.preventDefault;
+    console.log('button clicked')
+})
 
 castSearchForm.addEventListener("submit", async function (e) {
     e.preventDefault();
