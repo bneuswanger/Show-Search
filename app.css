@@ -1,6 +1,6 @@
 *, *:before, *:after {
     box-sizing: border-box;
-  }
+}
 
 body {
     background-color: #282421;
@@ -44,7 +44,7 @@ p {
     justify-content: center;
     text-align: center;
     display: block;
-  }
+}
 
 #tvimg {
     height: 15vmin;
@@ -85,6 +85,7 @@ input[type=text] {
     color: black;
     box-shadow: 0px 0px 4px 4px #ffffff;
 }
+
 .charImg {
     border: 1px solid rgb(206, 206, 206);
 }
@@ -100,10 +101,10 @@ input[type=text] {
     border-radius: .3rem;
     border-style: solid;
     color: #dfdfdf;
-    border-color:#dfdfdf;
-    background-color:#707478;
-    cursor:pointer;
-   }
+    border-color: #dfdfdf;
+    background-color: #707478;
+    cursor: pointer;
+}
 
 .playsName {
     color: rgb(209, 209, 209);
@@ -111,18 +112,43 @@ input[type=text] {
 
 .castButton:hover {
     color: #ffffff;
-    border-color:#ffffff;
-    background-color:#55585c;
-    
+    border-color: #ffffff;
+    background-color: #55585c;
+
 
 }
 
 .castButton:active {
     transform: translatey(1px);
-    background-color:#393b3f;
+    background-color: #393b3f;
 }
 
 a {
     color: #55b4eb;
     text-decoration: none;
+}
+
+#clearImagesButton {
+    width: 150px;
+    height: 35px;
+    font-size: larger;
+    border-radius: .3rem;
+    border-style: solid;
+    color: #dfdfdf;
+    border-color: #dfdfdf;
+    background-color: #707478;
+    cursor: pointer;
+}
+
+#clearImagesButton:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+    background-color: #55585c;
+
+
+}
+
+#clearImagesButton:active {
+    transform: translatey(1px);
+    background-color: #393b3f;
 }
