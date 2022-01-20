@@ -61,6 +61,7 @@ input[type=text] {
     padding: 10px;
     border-radius: 5px;
     width: 12rem;
+    
 }
 
 .flexbox-container {
@@ -94,8 +95,8 @@ input[type=text] {
     display: inline-block;
     align-items: center;
     justify-content: center;
-    margin-left: 1rem;
-    width: 150px;
+    margin-left: 2.3rem;
+    width: 190px;
     height: 35px;
     font-size: larger;
     border-radius: .3rem;
@@ -129,6 +130,7 @@ a {
 }
 
 #clearImagesButton {
+    text-align: center;
     width: 150px;
     height: 35px;
     font-size: larger;
@@ -138,6 +140,10 @@ a {
     border-color: #dfdfdf;
     background-color: #707478;
     cursor: pointer;
+}
+
+#clearImagesDiv {
+    text-align:center;
 }
 
 #clearImagesButton:hover {

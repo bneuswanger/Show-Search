@@ -2,17 +2,21 @@ const castSearchForm = document.querySelector("#castSearchForm");
 const charTilesSection = document.querySelector("#charTilesSection");
 const clearImagesButton = document.querySelector("#clearImagesButton")
 
+
+
 clearImagesButton.addEventListener("click", function(e) {
     e.preventDefault;
     console.log('button clicked');
-    clearImages(charTilesSection)
+    removeAllChildNodes(charTilesSection);
+  
 })
 
-const clearImages = (sectionID) => {
-    while (sectionID.length > 0) {
-        sectionID[0].remove();
+const removeAllChildNodes = (parent) => {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
     }
 }
+
 
 castSearchForm.addEventListener("submit", async function (e) {
     e.preventDefault();
