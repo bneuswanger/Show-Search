@@ -16,7 +16,6 @@ showSearchForm.addEventListener("submit", async function (e) {
 
 });
 
-
 const makeShowDivs = (showArray) => { //showArray is an array containing TV show data
     for (let result of showArray) {
         if (result.show.image) { //if result has an image, execute the next function with that result
@@ -51,7 +50,6 @@ clearImagesButton.addEventListener("click", function (e) {
     e.preventDefault;
     removeAllChildNodes(charTilesSection);
     removeAllChildNodes(showTilesSection);
-
 })
 
 const removeAllChildNodes = (parent) => {
@@ -59,7 +57,6 @@ const removeAllChildNodes = (parent) => {
         parent.removeChild(parent.firstChild);
     }
 }
-
 
 const makeCharDivs = (cast) => {
     for (let member of cast) {

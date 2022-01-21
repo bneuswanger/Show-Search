@@ -117,7 +117,7 @@ input[type=text] {
     color: #dfdfdf;
     border-color: #dfdfdf;
     background-color: #707478;
-    cursor: pointer;
+    cursor: pointer; 
 }
 
 .playsName {
