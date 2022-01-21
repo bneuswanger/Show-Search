@@ -107,7 +107,7 @@ const createCharHtmlElements = (member, age) => {
     actorName.appendChild(linkTextActor);
     let nameStr = member.person.name;
     let replaced = nameStr.split(' ').join('+');
-    actorName.href = `https://www.imdb.com/search/name/?name=${replaced}`;
+    actorName.href = `https://www.imdb.com/find?q=${replaced}&ref_=nv_sr_sm`;
     charDiv.appendChild(actorName);
 
     const playsName = document.createElement("span");
