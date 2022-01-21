@@ -21,7 +21,7 @@ h1 {
 
 h2 {
     font-family: 'Patrick Hand SC', cursive;
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: .2rem;
     letter-spacing: .2rem;
     font-size: 3vmin;
@@ -87,8 +87,25 @@ input[type=text] {
     box-shadow: 0px 0px 4px 4px #ffffff;
 }
 
+.showDiv:hover {
+    box-shadow: 0px 0px 8px 8px #ffffff;
+    border: .2rem solid #ffffff;
+    background-color: #474644;
+    transform: scale(1.04) translatey(-5px);
+    
+     
+}
+.showDiv:active {
+    box-shadow: 0px 0px 9px 10px #ffffff;
+    border: .2rem solid #ffffff;
+    background-color: #474644;
+    transform: scale(1) translatey(0px);
+    
+}
+
+
 .charImg, .showImg {
-    border: 1px solid rgb(206, 206, 206);
+    border: 2px solid rgb(206, 206, 206);
 }
 
 .searchButton {

@@ -12,8 +12,9 @@ showSearchForm.addEventListener("submit", async function (e) {
     const res = await axios.get(
         `https://api.tvmaze.com/search/shows?q=${showSearchTerm}`
     );
-    console.log(res.data);
     showSearchForm.elements.query.value = "";
+    removeAllChildNodes(showTilesSection)
+    removeAllChildNodes(charTilesSection)
     makeShowDivs(res.data);
 
 });
@@ -23,6 +24,7 @@ const makeShowDivs = (showArray) => { //showArray is an array containing TV show
     for (let result of showArray) {
         if (result.show.image) { //if result has an image, execute the next function with that result
             createShowHtmlElements(result);
+            console.log(result)
         }
     }
 };
@@ -38,7 +40,7 @@ const createShowHtmlElements = (result) => {    //result is an object with data 
     showDiv.appendChild(img);
 
     let showID = result.show.id;
-    console.log(showID)
+
     img.addEventListener("click", async function (e) {
         e.preventDefault;
         const res2 = await axios.get(`https://api.tvmaze.com/shows/${showID}/cast`);
@@ -53,8 +55,9 @@ const createShowHtmlElements = (result) => {    //result is an object with data 
 
 clearImagesButton.addEventListener("click", function (e) {
     e.preventDefault;
-    console.log('button clicked');
     removeAllChildNodes(charTilesSection);
+    removeAllChildNodes(showTilesSection);
+
 })
 
 const removeAllChildNodes = (parent) => {
@@ -65,12 +68,12 @@ const removeAllChildNodes = (parent) => {
 
 
 
-
-
 const makeCharDivs = (cast) => {
     for (let member of cast) {
         if (member.character.image) {
             ageCalc(member);
+        } else {                   
+            console.log(`No pic for ${member.character.name}`)
         }
     }
 };
@@ -88,10 +91,10 @@ const ageCalc = (member) => {
             age--;
         }
     }
-    createHtmlElements(member, age);
+    createCharHtmlElements(member, age);
 };
 
-const createHtmlElements = (member, age) => {
+const createCharHtmlElements = (member, age) => {
     const charDiv = document.createElement("div");
     charDiv.className = "charDiv";
     charTilesSection.appendChild(charDiv);
@@ -107,7 +110,7 @@ const createHtmlElements = (member, age) => {
     const actorName = document.createElement("a");
     actorName.classList = "actorName";
     actorName.target = "_blank";
-    let linkTextActor = document.createTextNode(`${member.person.name} (${age})`);
+    let linkTextActor = document.createTextNode(`${member.person.name} (Age:${age})`);
     actorName.appendChild(linkTextActor);
     actorName.href = member.person.url;
     charDiv.appendChild(actorName);
@@ -125,16 +128,6 @@ const createHtmlElements = (member, age) => {
     charName.href = member.character.url;
     charDiv.appendChild(charName);
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
