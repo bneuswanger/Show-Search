@@ -73,7 +73,7 @@ input[type=text] {
     column-gap: 1rem;
 }
 
-.charDiv {
+.charDiv, .showDiv {
     background-color: #282421;
     display: inline-block;
     margin: 1rem;
@@ -87,7 +87,7 @@ input[type=text] {
     box-shadow: 0px 0px 4px 4px #ffffff;
 }
 
-.charImg {
+.charImg, .showImg {
     border: 1px solid rgb(206, 206, 206);
 }
 
