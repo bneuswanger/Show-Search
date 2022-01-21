@@ -3,9 +3,6 @@ const charTilesSection = document.querySelector("#charTilesSection");
 const showTilesSection = document.querySelector("#showTilesSection");
 const clearImagesButton = document.querySelector("#clearImagesButton")
 
-
-
-
 showSearchForm.addEventListener("submit", async function (e) {
     e.preventDefault();
     const showSearchTerm = showSearchForm.elements.query.value;
@@ -24,7 +21,7 @@ const makeShowDivs = (showArray) => { //showArray is an array containing TV show
     for (let result of showArray) {
         if (result.show.image) { //if result has an image, execute the next function with that result
             createShowHtmlElements(result);
-            console.log(result)
+
         }
     }
 };
@@ -45,13 +42,10 @@ const createShowHtmlElements = (result) => {    //result is an object with data 
         e.preventDefault;
         const res2 = await axios.get(`https://api.tvmaze.com/shows/${showID}/cast`);
         makeCharDivs(res2.data);
+
         removeAllChildNodes(showTilesSection);
     })
 }
-
-
-
-
 
 clearImagesButton.addEventListener("click", function (e) {
     e.preventDefault;
@@ -67,13 +61,12 @@ const removeAllChildNodes = (parent) => {
 }
 
 
-
 const makeCharDivs = (cast) => {
     for (let member of cast) {
         if (member.character.image) {
             ageCalc(member);
-        } else {                   
-            console.log(`No pic for ${member.character.name}`)
+        } else {
+            console.log(`Some data but no pic for ${member.character.name}`)
         }
     }
 };
@@ -112,7 +105,9 @@ const createCharHtmlElements = (member, age) => {
     actorName.target = "_blank";
     let linkTextActor = document.createTextNode(`${member.person.name} (Age:${age})`);
     actorName.appendChild(linkTextActor);
-    actorName.href = member.person.url;
+    let nameStr = member.person.name;
+    let replaced = nameStr.split(' ').join('+');
+    actorName.href = `https://www.imdb.com/search/name/?name=${replaced}`;
     charDiv.appendChild(actorName);
 
     const playsName = document.createElement("span");
@@ -128,7 +123,6 @@ const createCharHtmlElements = (member, age) => {
     charName.href = member.character.url;
     charDiv.appendChild(charName);
 }
-
 
 
 
